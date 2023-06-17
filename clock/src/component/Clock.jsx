@@ -16,9 +16,9 @@ const Clock = () => {
     useEffect(() => {
         if (timeon) {
             intervalRef.current = setInterval(() => {
-                setTime(pre => pre + 10)
+                setTime(pre => pre + 100)
             }, 10)
-            console.log(1)
+           
         } else {
             clearInterval(intervalRef.current)
         }
@@ -26,7 +26,7 @@ const Clock = () => {
 
     const formatTime = time => {
         const minu = Math.floor(time / 60000)
-        const secon = Math.floor((time % 600000) / 1000)
+        const secon = Math.floor((time % 60000) / 1000)
         const milisecon = Math.floor((time % 1000) / 10).toString().padStart(2,'0')
         return `${minu}:${secon.toString().padStart(2, '0')}.${milisecon}`
     }
