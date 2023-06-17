@@ -16,7 +16,7 @@ const Clock = () => {
     useEffect(() => {
         if (timeon) {
             intervalRef.current = setInterval(() => {
-                setTime(pre => pre + 100)
+                setTime(pre => pre + 10)
             }, 10)
            
         } else {
